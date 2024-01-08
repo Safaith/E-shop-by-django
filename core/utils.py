@@ -56,6 +56,7 @@ def guestOrder(request, data):
     print("user is not logged in")
     name = data['form']['name']
     email = data['form']['email']
+    password = data['form']['password']
 
     cookiedata = cookieCart(request)
     items = cookiedata['items']

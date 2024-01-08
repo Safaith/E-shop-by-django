@@ -122,7 +122,6 @@ def signin(request):
         else:
             return render(request, "core/signin.html")
 
-
 def signup(request):
     if request.user.is_authenticated:
         messages.info(request, "user already logged in")
@@ -153,6 +152,7 @@ def signup(request):
                 return redirect('signup')
         else:
             return render(request, 'core/signup.html')
+
 @login_required
 def logoutPage(request):
     logout(request)
