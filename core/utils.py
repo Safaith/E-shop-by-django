@@ -1,5 +1,6 @@
 import json
 from .models import *
+from django.contrib.auth.models import User
 
 def cookieCart(request):
     try:
@@ -57,6 +58,7 @@ def guestOrder(request, data):
     name = data['form']['name']
     email = data['form']['email']
     password = data['form']['password']
+    User.objects.create_user(username=name, email=email, password=password)
 
     cookiedata = cookieCart(request)
     items = cookiedata['items']

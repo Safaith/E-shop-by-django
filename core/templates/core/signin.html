@@ -21,11 +21,19 @@
     </style>
 </head>
 
-
-
 <body class="bg-color">
   <section class="container mt-5">
     <div class="row justify-content-md-center">
+        <style>
+          .message{
+            color: red;
+          }
+        </style>
+        <div class="message">
+          {% for message in messages %}
+            <h5>{{message}}</h5>
+          {% endfor %}
+        </div>
       <form action="" method="POST" class="col-md-6 col-sm-12 bg-white p-5 rounded shadow">
         {% csrf_token %}
 
