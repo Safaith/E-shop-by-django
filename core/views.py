@@ -164,4 +164,7 @@ def signup(request):
 @login_required
 def logoutPage(request):
     logout(request)
-    return redirect("signin")
+    return redirect("store")
+
+def index(request):
+    return render(request, "core/index.html")
