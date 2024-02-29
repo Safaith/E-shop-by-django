@@ -82,7 +82,7 @@ def update_item(request):
 
 @csrf_exempt
 def processOrder(request):
-    transaction_id = datetime.datetime.now().timestamp()
+    # transaction_id = datetime.datetime.now().timestamp()
     data = json.loads(request.body)
 
     if request.user.is_authenticated:
@@ -93,7 +93,7 @@ def processOrder(request):
        customer,order = guestOrder(request, data)
             
     total = float(data['form']['total'])
-    order.transaction_id = transaction_id
+    # order.transaction_id = transaction_id
 
     if total == float(order.get_cart_total):
         order.complete = True
